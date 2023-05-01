@@ -1,18 +1,14 @@
 mod parser;
+mod io;
 
 use std::env;
-use std::fs::File;
-use std::io::BufReader;
-use std::io::Read;
-
 
 fn main() {
-    let file_path = env::args().nth(1).expect("Please provide a file path");
-    let file = File::open(file_path).expect("Failed to open file at given path");
-    let mut buf_reader = BufReader::new(file);
-    let mut content = String::new();
-    buf_reader.read_to_string(&mut content).expect("Failed to read to string");
-
+    let read_file_path = env::args().nth(1).expect("Please provide a file path");
+    let content = io::read(&read_file_path);
     let keys = parser::parse(&content);
     dbg!(keys);
+
+    let file_path = env::args().nth(2).expect("Please provide a file path for LocalizedKeys.swift");
+    io::write("keys placeholder", &file_path);
 }
