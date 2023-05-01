@@ -1,0 +1,8 @@
+[package]
+name = "swift_localized_generator"
+authors = ["adrianEffe <adrian.iosdev@gmail.com>"]
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+regex = "1.8.1"
