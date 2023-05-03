@@ -1,9 +1,9 @@
 use regex::Regex;
 
 pub fn parse(content: &str) -> Vec<&str> {
-    let re = Regex::new(r#""([a-zA-Z]+)"\s*=\s*"[^"]*";"#).unwrap();
+    let regex = Regex::new(r#""([a-zA-Z]+)"\s*=\s*"[^"]*";"#).unwrap();
     let mut localizable_keys = Vec::new();
-    for captures in re.captures_iter(&content) {
+    for captures in regex.captures_iter(content) {
         let key = captures.get(1).unwrap().as_str();
         localizable_keys.push(key);
     }
