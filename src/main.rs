@@ -13,6 +13,6 @@ fn main() {
 
     let file_path = env::args()
         .nth(2)
-        .expect("Please provide a file path for LocalizedKeys.swift");
+        .expect("Please provide a file path for LocalizationKeys.swift");
     io::write(&swift_file, &file_path);
 }
