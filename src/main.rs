@@ -9,7 +9,7 @@ fn main() {
     let content = io::read(&read_file_path);
     let keys = parser::parse(&content);
 
-    let swift_file = formatter::format(keys);
+    let swift_file = formatter::format(&keys);
 
     let file_path = env::args()
         .nth(2)
