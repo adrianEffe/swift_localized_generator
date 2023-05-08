@@ -10,7 +10,7 @@
 
 3. Build the rust project for release:
     ```
-    cd swift-localized-generator
+    cd swift_localized_generator
     cargo build --release
     ```
     
